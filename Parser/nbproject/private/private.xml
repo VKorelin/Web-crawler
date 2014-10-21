@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Vasily/Documents/NetBeansProjects/Parser/src/parser/ParserManager.java</file>
+            <file>file:/C:/Users/Vasily/Documents/NetBeansProjects/Parser/src/parser/Parser.java</file>
+            <file>file:/C:/Users/Vasily/Documents/NetBeansProjects/Parser/src/DAO/Document.java</file>
+            <file>file:/C:/Users/Vasily/Documents/NetBeansProjects/Parser/test/parser/DocParserTest.java</file>
+            <file>file:/C:/Users/Vasily/Documents/NetBeansProjects/Parser/test/parser/PdfParserTest.java</file>
+            <file>file:/C:/Users/Vasily/Documents/NetBeansProjects/Parser/test/parser/ParserManagerTest.java</file>
+            <file>file:/C:/Users/Vasily/Documents/NetBeansProjects/Parser/src/parser/HtmlParser.java</file>
+        </group>
+    </open-files>
+</project-private>
