@@ -1,14 +1,14 @@
 package parser;
 
+import DAO.DAO;
 import DAO.Document;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Parser {
 
     public static void main(String[] args) {
+        DAO dao = new DAO();
         ParserManager pm = new ParserManager();
         //pm.Parse("C:\\Users\\Vasily\\Documents\\NetBeansProjects\\Parser\\resources\\docx\\Hello.docx");
         pm.Parse("C:\\Users\\Vasily\\Documents\\NetBeansProjects\\Parser\\resources\\html\\Article.htm");
