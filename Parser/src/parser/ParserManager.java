@@ -43,11 +43,7 @@ public class ParserManager {
             case ".pdf":
                 text = PdfParser.parse(file);
                 break;
-            case ".xml":
-                text = XmlParser.parse(file);
-                break;
             case ".htm":
-                extension = ".html";
             case ".html":
                 text = HtmlParser.parse(file);
                 break;

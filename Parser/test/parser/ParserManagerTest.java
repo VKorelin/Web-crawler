@@ -10,7 +10,6 @@ public class ParserManagerTest extends TestCase {
     }
 
     public void testNullFileNameParse() {
-        System.out.println("Parse");
         String filename = null;
         ParserManager instance = new ParserManager();
         Document result = instance.Parse(filename);
@@ -19,7 +18,6 @@ public class ParserManagerTest extends TestCase {
     }
     
     public void testEmptyStringNameParse() {
-        System.out.println("Parse");
         String filename = "";
         ParserManager instance = new ParserManager();
         Document result = instance.Parse(filename);
@@ -28,7 +26,6 @@ public class ParserManagerTest extends TestCase {
     }
     
     public void testInvalidNameParse() {
-        System.out.println("Parse");
         String filename = "rgfdopsfdpokpodkopk";
         ParserManager instance = new ParserManager();
         Document result = instance.Parse(filename);
@@ -37,7 +34,6 @@ public class ParserManagerTest extends TestCase {
     }
     
     public void testNotSupportedFormatNameParse() {
-        System.out.println("Parse");
         String filename = "rgfdopsfdpokpodkopk.eqa";
         ParserManager instance = new ParserManager();
         Document result = instance.Parse(filename);
