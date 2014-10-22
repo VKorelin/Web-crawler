@@ -1,7 +1,6 @@
 package parser;
 
 import java.io.File;
-import java.util.ArrayList;
 import junit.framework.TestCase;
 
 public class DocXParserTest extends TestCase {
@@ -9,52 +8,41 @@ public class DocXParserTest extends TestCase {
     public DocXParserTest(String testName) {
         super(testName);
     }
-
+    
     public void testNormalEnParse() {
-        String filename = "C:\\Users\\Vasily\\Documents\\NetBeansProjects\\Parser\\resources\\TestRes\\docx\\Hello.docx";
+        String filename = ".\\resources\\TestRes\\docx\\Hello.docx";
         File file = new File(filename);
-        String expResult = "";
+        String expResult = "Hello! \n\nHow  are you?\n";
         String result = DocXParser.parse(file);
         assertEquals(expResult, result);
     }
 
     public void testNullFileParse() {
-        ArrayList<String> expResult = null;
+        String expResult = null;
         String result = DocXParser.parse(null);
         assertEquals(expResult, result);
     }
 
     public void testEmptyFileParse() {
-        System.out.println("parse");
-        String filename = "C:\\Users\\Vasily\\Documents\\NetBeansProjects\\Parser\\resources\\TestRes\\docx\\Empty.docx";
+        String filename = ".\\resources\\TestRes\\docx\\Empty.docx";
         File file = new File(filename);
-        ArrayList<String> expResult = new ArrayList<>();
+        String expResult = "";
         String result = DocXParser.parse(file);
         assertEquals(expResult, result);
     }
     
     public void testEnWithImageParse() {
-        System.out.println("parse");
-        String filename = "C:\\Users\\Vasily\\Documents\\NetBeansProjects\\Parser\\resources\\TestRes\\docx\\HelloImg.docx";
+        String filename = ".\\resources\\TestRes\\docx\\HelloImg.docx";
         File file = new File(filename);
-        ArrayList<String> expResult = new ArrayList<>();
-        expResult.add("hello");
-        expResult.add("how");
-        expResult.add("ar");
-        expResult.add("you");
+        String expResult = "Hello! \n\n\nHow  are you?\n";
         String result = DocXParser.parse(file);
         assertEquals(expResult, result);
     }
     
-    public void testEnBigDocParse() {
-        System.out.println("parse");
-        String filename = "C:\\Users\\Vasily\\Documents\\NetBeansProjects\\Parser\\resources\\TestRes\\docx\\HelloBig.docx";
+    public void testEnBigDocXParse() {
+        String filename = ".\\resources\\TestRes\\docx\\HelloBig.docx";
         File file = new File(filename);
-        ArrayList<String> expResult = new ArrayList<>();
-        expResult.add("hello");
-        expResult.add("how");
-        expResult.add("ar");
-        expResult.add("you");
+        String expResult = "Hello! \n\n\nHow  are you?\n";
         String result = DocXParser.parse(file);
         assertEquals(expResult, result);
     }

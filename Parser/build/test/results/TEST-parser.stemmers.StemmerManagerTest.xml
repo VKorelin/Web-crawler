@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Vasily-PC" name="parser.stemmers.StemmerManagerTest" skipped="0" tests="1" time="0.369" timestamp="2014-10-15T13:13:08">
+<testsuite errors="0" failures="0" hostname="Vasily-PC" name="parser.stemmers.StemmerManagerTest" skipped="0" tests="1" time="0.113" timestamp="2014-10-22T14:37:53">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="nb.wait.for.caches" value="true" />
@@ -9,7 +9,7 @@
     <property name="libs.junit.javadoc" value="C:\Program Files\NetBeans 8.0.1\java\docs\junit-3.8.2-api.zip" />
     <property name="ant.core.lib" value="C:\Program Files\NetBeans 8.0.1\extide\ant\lib\ant.jar" />
     <property name="javadoc.windowtitle" value="" />
-    <property name="user.dir" value="C:\Users\Vasily\Documents\NetBeansProjects\Parser" />
+    <property name="user.dir" value="C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser" />
     <property name="java.vm.version" value="23.25-b01" />
     <property name="libs.DataBindingME.classpath" value="C:\Program Files\NetBeans 8.0.1\mobility\modules\ext\netbeans_databindingme.jar" />
     <property name="libs.j2me_common_ant.src" value="" />
@@ -46,7 +46,7 @@
     <property name="copylibs.rebase" value="true" />
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner parser.stemmers.StemmerManagerTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Vasily\Documents\NetBeansProjects\Parser\build\test\results\TEST-parser.stemmers.StemmerManagerTest.xml crashfile=C:\Users\Vasily\Documents\NetBeansProjects\Parser\build\junitvmwatcher4755167134491051091.properties propsfile=C:\Users\Vasily\Documents\NetBeansProjects\Parser\build\junit1777058217937454986.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner parser.stemmers.StemmerManagerTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\build\test\results\TEST-parser.stemmers.StemmerManagerTest.xml crashfile=C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\build\junitvmwatcher3991733236836685313.properties propsfile=C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\build\junit4410049725982085878.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -90,7 +90,6 @@
     <property name="libs.junit.classpath" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\junit-3.8.2.jar" />
     <property name="libs.hibernate4-persistencemodelgen.javadoc" value="" />
     <property name="libs.jaxb.javadoc" value="C:\Program Files\NetBeans 8.0.1\ide\docs\jaxb-api-doc.zip" />
-    <property name="org.openide.awt.SwingBrowserImpl.do-not-block-awt" value="false" />
     <property name="ant.home" value="C:\Program Files\NetBeans 8.0.1\extide\ant" />
     <property name="libs.junit_4.src" value="C:\Program Files\NetBeans 8.0.1\java\docs\junit-4.10-sources.jar" />
     <property name="libs.testng.classpath" value="C:\Program Files\NetBeans 8.0.1\platform\modules\ext\testng-6.8.1-dist.jar" />
@@ -98,12 +97,12 @@
     <property name="ant.java.version" value="1.7" />
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_25\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Java\jdk1.7.0_25\bin\;D:\Soft\Matlab\runtime\win32;D:\Soft\Matlab\bin;C:\Program Files\MySQL\MySQL Server 5.5\bin;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;." />
     <property name="javadoc.author" value="false" />
-    <property name="ant.file.Parser-impl" value="C:\Users\Vasily\Documents\NetBeansProjects\Parser\nbproject\build-impl.xml" />
+    <property name="ant.file.Parser-impl" value="C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\nbproject\build-impl.xml" />
     <property name="java.util.logging.config.class" value="org.netbeans.core.startup.TopLogging" />
     <property name="libs.spring-framework400.src" value="" />
     <property name="libs.PostgreSQLDriver.src" value="" />
     <property name="sun.arch.data.model" value="32" />
-    <property name="basedir" value="C:\Users\Vasily\Documents\NetBeansProjects\Parser" />
+    <property name="basedir" value="C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser" />
     <property name="libs.jpa20-persistence.maven-pom" value="" />
     <property name="jar.compress" value="false" />
     <property name="path.separator" value=";" />
@@ -133,7 +132,7 @@
     <property name="libs.hibernate4-persistencemodelgen.maven-pom" value="" />
     <property name="libs.eclipselink.javadoc" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="user.properties.file" value="C:\Users\Vasily\AppData\Roaming\NetBeans\8.0.1\build.properties" />
-    <property name="ant.file.Parser" value="C:\Users\Vasily\Documents\NetBeansProjects\Parser\build.xml" />
+    <property name="ant.file.Parser" value="C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\build.xml" />
     <property name="runtime.encoding" value="UTF-8" />
     <property name="libs.javac-api.maven-pom" value="" />
     <property name="file.encoding.pkg" value="sun.io" />
@@ -142,7 +141,7 @@
     <property name="libs.JWSAntTasks.classpath" value="C:\Program Files\NetBeans 8.0.1\java\ant\extra\org-netbeans-modules-javawebstart-anttasks.jar" />
     <property name="libs.spring-framework300.src" value="" />
     <property name="file.reference.poi-3.10.1-20140818.jar" value="externalLibs\poi\poi-3.10.1-20140818.jar" />
-    <property name="empty.dir" value="C:\Users\Vasily\Documents\NetBeansProjects\Parser\build\empty" />
+    <property name="empty.dir" value="C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\build\empty" />
     <property name="version-output" value="java version &quot;1.7" />
     <property name="test.binarytestincludes" value="" />
     <property name="libs.hibernate4-persistencemodelgen.src" value="" />
@@ -174,7 +173,7 @@
     <property name="sun.java2d.noddraw" value="true" />
     <property name="javac.processorpath" value="externalLibs\dom4j.jar:externalLibs\pdfbox-app-1.8.7.jar:externalLibs\xmlbeans.jar:externalLibs\poi\poi-3.10.1-20140818.jar:externalLibs\poi\poi-examples-3.10.1-20140818.jar:externalLibs\poi\poi-excelant-3.10.1-20140818.jar:externalLibs\poi\poi-ooxml-3.10.1-20140818.jar:externalLibs\poi\poi-ooxml-schemas-3.10.1-20140818.jar:externalLibs\poi\poi-scratchpad-3.10.1-20140818.jar:C:\Program Files\NetBeans 8.0.1\java\modules\ext\junit-3.8.2.jar:C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar:externalLibs\jsoup-1.8.1.jar" />
     <property name="javac.compilerargs" value="" />
-    <property name="ant.file" value="C:\Users\Vasily\Documents\NetBeansProjects\Parser\build.xml" />
+    <property name="ant.file" value="C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\build.xml" />
     <property name="libs.beans-binding.maven-pom" value="" />
     <property name="libs.hibernate4-support.javadoc" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="libs.beans-binding.src" value="" />
@@ -184,7 +183,6 @@
     <property name="org.openide.major.version" value="IDE/1" />
     <property name="java.vm.name" value="Java HotSpot(TM) Client VM" />
     <property name="netbeans.user" value="C:\Users\Vasily\AppData\Roaming\NetBeans\8.0.1" />
-    <property name="tests.failed" value="true" />
     <property name="javadoc.additionalparam" value="" />
     <property name="java.io.tmpdir" value="C:\Users\Vasily\AppData\Local\Temp\" />
     <property name="java.vendor.url" value="http://java.oracle.com/" />
@@ -201,6 +199,7 @@
     <property name="libs.DataBindingME-SVG.src" value="C:\Program Files\NetBeans 8.0.1\mobility\sources\netbeans_databindingme_svg-src.zip" />
     <property name="dist.jar" value="dist/Parser.jar" />
     <property name="libs.spring-framework400.maven-pom" value="" />
+    <property name="netbeans.automatic.build" value="true" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="ant.project.name" value="Parser" />
     <property name="netbeans.hash.code" value="unique=NB_CND_EXTIDE_GROOVY_JAVA_JC_MOB034ac4b92-0b59-4448-9779-c34a532b18cd_60fc4b12-c489-4c29-9126-e2a70321940f" />
@@ -238,7 +237,7 @@
     <property name="annotation.processing.processor.options" value="" />
     <property name="libs.testng.maven-pom" value="" />
     <property name="libs.jaxb.src" value="" />
-    <property name="work.dir" value="C:\Users\Vasily\Documents\NetBeansProjects\Parser" />
+    <property name="work.dir" value="C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser" />
     <property name="libs.jaxb.classpath" value="C:\Program Files\NetBeans 8.0.1\ide\modules\ext\jaxb\jaxb-impl.jar;C:\Program Files\NetBeans 8.0.1\ide\modules\ext\jaxb\jaxb-xjc.jar;C:\Program Files\NetBeans 8.0.1\ide\modules\ext\jaxb\jaxb1-impl.jar;C:\Program Files\NetBeans 8.0.1\ide\modules\ext\jaxb\activation.jar;C:\Program Files\NetBeans 8.0.1\ide\modules\ext\jaxb\api\jaxb-api.jar;C:\Program Files\NetBeans 8.0.1\ide\modules\ext\jaxb\api\jsr173_1.0_api.jar" />
     <property name="do.depend" value="false" />
     <property name="libs.j2me_common_ant.classpath" value="C:\Program Files\NetBeans 8.0.1\mobility\modules\org-netbeans-modules-j2me-common-ant.jar;C:\Program Files\NetBeans 8.0.1\java\modules\org-netbeans-modules-classfile.jar" />
@@ -255,7 +254,7 @@
     <property name="junit.forkmode" value="perTest" />
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_25\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_25\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_25\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_25\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_25\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_25\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_25\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_25\jre\classes" />
     <property name="javac.target" value="1.7" />
-    <property name="built-jar.properties" value="C:\Users\Vasily\Documents\NetBeansProjects\Parser\build\built-jar.properties" />
+    <property name="built-jar.properties" value="C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\build\built-jar.properties" />
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src" />
     <property name="annotation.processing.enabled" value="true" />
@@ -289,8 +288,8 @@
     <property name="excludes" value="" />
     <property name="libs.jpa2-persistence.javadoc" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="libs.DataBindingME.javadoc" value="C:\Program Files\NetBeans 8.0.1\mobility\modules\docs\netbeans_databindingme-api.zip" />
+    <property name="java.class.path" value="C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\externalLibs\dom4j.jar;C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\externalLibs\pdfbox-app-1.8.7.jar;C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\externalLibs\xmlbeans.jar;C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\externalLibs\poi\poi-3.10.1-20140818.jar;C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\externalLibs\poi\poi-examples-3.10.1-20140818.jar;C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\externalLibs\poi\poi-excelant-3.10.1-20140818.jar;C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\externalLibs\poi\poi-ooxml-3.10.1-20140818.jar;C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\externalLibs\poi\poi-ooxml-schemas-3.10.1-20140818.jar;C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\externalLibs\poi\poi-scratchpad-3.10.1-20140818.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\junit-3.8.2.jar;C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar;C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\externalLibs\jsoup-1.8.1.jar;C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\build\classes;C:\Users\Vasily\Documents\GitHub\Web-crawler\Parser\build\test\classes;C:\Program Files\NetBeans 8.0.1\extide\ant\lib\ant-launcher.jar;C:\Program Files\NetBeans 8.0.1\extide\ant\lib\ant.jar;C:\Program Files\NetBeans 8.0.1\extide\ant\lib\ant-junit.jar;C:\Program Files\NetBeans 8.0.1\extide\ant\lib\ant-junit4.jar" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
-    <property name="java.class.path" value="C:\Users\Vasily\Documents\NetBeansProjects\Parser\externalLibs\dom4j.jar;C:\Users\Vasily\Documents\NetBeansProjects\Parser\externalLibs\pdfbox-app-1.8.7.jar;C:\Users\Vasily\Documents\NetBeansProjects\Parser\externalLibs\xmlbeans.jar;C:\Users\Vasily\Documents\NetBeansProjects\Parser\externalLibs\poi\poi-3.10.1-20140818.jar;C:\Users\Vasily\Documents\NetBeansProjects\Parser\externalLibs\poi\poi-examples-3.10.1-20140818.jar;C:\Users\Vasily\Documents\NetBeansProjects\Parser\externalLibs\poi\poi-excelant-3.10.1-20140818.jar;C:\Users\Vasily\Documents\NetBeansProjects\Parser\externalLibs\poi\poi-ooxml-3.10.1-20140818.jar;C:\Users\Vasily\Documents\NetBeansProjects\Parser\externalLibs\poi\poi-ooxml-schemas-3.10.1-20140818.jar;C:\Users\Vasily\Documents\NetBeansProjects\Parser\externalLibs\poi\poi-scratchpad-3.10.1-20140818.jar;C:\Program Files\NetBeans 8.0.1\java\modules\ext\junit-3.8.2.jar;C:\Program Files\NetBeans 8.0.1\platform\modules\ext\junit-4.10.jar;C:\Users\Vasily\Documents\NetBeansProjects\Parser\externalLibs\jsoup-1.8.1.jar;C:\Users\Vasily\Documents\NetBeansProjects\Parser\build\classes;C:\Users\Vasily\Documents\NetBeansProjects\Parser\build\test\classes;C:\Program Files\NetBeans 8.0.1\extide\ant\lib\ant-launcher.jar;C:\Program Files\NetBeans 8.0.1\extide\ant\lib\ant.jar;C:\Program Files\NetBeans 8.0.1\extide\ant\lib\ant-junit.jar;C:\Program Files\NetBeans 8.0.1\extide\ant\lib\ant-junit4.jar" />
     <property name="do.mkdist" value="true" />
     <property name="libs.absolutelayout.src" value="" />
     <property name="libs.jpa20-persistence.classpath" value="C:\Program Files\NetBeans 8.0.1\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar" />
@@ -335,8 +334,7 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="file.reference.dom4j.jar" value="externalLibs\dom4j.jar" />
   </properties>
-  <testcase classname="parser.stemmers.StemmerManagerTest" name="testEmptyWordGetStem" time="0.004" />
-  <system-out><![CDATA[getStem
-]]></system-out>
+  <testcase classname="parser.stemmers.StemmerManagerTest" name="testEmptyWordGetStem" time="0.003" />
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

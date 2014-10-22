@@ -13,6 +13,10 @@ import org.jsoup.select.Elements;
 public class HtmlParser {
 
     public static String parse(File f) {
+        if (f == null) {
+            return null;
+        }
+
         Document doc = null;
         try {
             doc = Jsoup.parse(f, "utf-8");
