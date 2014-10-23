@@ -1,51 +1,199 @@
 package DAO;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 public class DAO {
 
-    private static DAO instance = new DAO();
-    private Connection connection = null;
-    public static final String URL = "jdbc:sqlserver:\\MYPC\\SQLEXPRESS; databaseName = Reuters";
-    public static final String USER = "administrator";
-    public static final String PASSWORD = "admin";
-    public static final String DRIVER_CLASS = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-
-    public DAO() { //Step 1: Load driver
-        try {
-            Class.forName(DRIVER_CLASS);
-            System.out.println("Successful: Driver has found");
-        }
-        catch (ClassNotFoundException ignore) {
-            System.out.println("Error: Driver has not found");
-        }
+    public DAO() {
     }
 
-    private Connection createConnection() {
-        Connection conn = null;
+    public void addDataToDocument(List<Document> documents) {
+
+        PreparedStatement ps = null;
+        Connection connection = null;
+
         try {
-            //Step 2: Establish Java MSSQLServer connection
-            conn = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("Successful: Connected to Database.");
+
+            connection = new MSSQLConnection().getMSSQLConnection();
+            connection.setAutoCommit(false);
+
+            for (int i = 0; i < documents.size(); i++) {
+                ps = connection.prepareStatement("INSERT INTO Document(DocumentTitle, DocumnetAuthor, DocumentExtension, DocumentText, DocumentDate) "
+                        + "VALUES( ?, ?, ?, ?, ? );");
+                ps.setString(1, documents.get(i).getTitle());
+                ps.setString(2, documents.get(i).getAuthor());
+                ps.setString(3, documents.get(i).getExtension());
+                ps.setString(4, documents.get(i).getText());
+                ps.setString(5, documents.get(i).getDate());
+                ps.addBatch();
+                int[] updateCounts = ps.executeBatch();
+            }
+
+            connection.commit();
+            connection.close();
         }
         catch (SQLException ignore) {
-            System.out.println("Error: Unable to Connect to Database.");
+//            System.out.println("Connection hasn't created");
+            ignore.printStackTrace();
         }
-        return conn;
+        finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            }
+            catch (SQLException ignore) {
+                System.out.println("Connection hasn't closed");
+                ignore.printStackTrace();
+            }
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            }
+            catch (SQLException ignore) {
+                System.out.println("PraparedStatemen hasn't completed");
+                ignore.printStackTrace();
+            }
+        }
     }
 
-    public static Connection getConnection() {
-        return instance.createConnection();
-    }
+    public void addDataToTerm(List<Term> terms) {
 
-    public void close() {
+        PreparedStatement ps = null;
+        Connection connection = null;
+
         try {
-            instance.close();
+
+            connection = new MSSQLConnection().getMSSQLConnection();
+            connection.setAutoCommit(false);
+
+            for (int i = 0; i < terms.size(); i++) {
+                ps = connection.prepareStatement("INSERT INTO Term(TermStem, TermDF) "
+                        + "VALUES( ?, ?);");
+                ps.setString(1, terms.get(i).getStem());
+                ps.setInt(2, terms.get(i).getDf());
+                ps.addBatch();
+                int[] updateCounts = ps.executeBatch();
+            }
+
+            connection.commit();
+            connection.close();
         }
-        catch (Exception ignore) {
-            System.out.println("Connection has not closed");
+        catch (SQLException ignore) {
+//            System.out.println("Connection hasn't created");
+            ignore.printStackTrace();
+        }
+        finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            }
+            catch (SQLException ignore) {
+                System.out.println("Connection hasn't closed");
+                ignore.printStackTrace();
+            }
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            }
+            catch (SQLException ignore) {
+                System.out.println("PraparedStatemen hasn't completed");
+                ignore.printStackTrace();
+            }
+        }
+    }
+
+    public void addTermToTTerm(Term term) {
+
+        PreparedStatement ps = null;
+        Connection connection = null;
+
+        try {
+
+            connection = new MSSQLConnection().getMSSQLConnection();
+
+            ps = connection.prepareStatement("INSERT INTO Term(TermStem, TermDF) VALUES( ?, ? );");
+            ps.setString(1, term.getStem());
+            ps.setInt(2, term.getDf());
+            
+            ps.executeUpdate();
+            connection.close();
+        }
+        catch (SQLException ignore) {
+//            System.out.println("Connection hasn't created");
+            ignore.printStackTrace();
+        }
+        finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            }
+            catch (SQLException ignore) {
+                System.out.println("Connection hasn't closed");
+                ignore.printStackTrace();
+            }
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            }
+            catch (SQLException ignore) {
+                System.out.println("PraparedStatemen hasn't completed");
+                ignore.printStackTrace();
+            }
+        }
+    }
+
+    public void addDocumentToTDocument(Document document) {
+
+        PreparedStatement ps = null;
+        Connection connection = null;
+
+        try {
+
+            connection = new MSSQLConnection().getMSSQLConnection();
+            
+            ps = connection.prepareStatement("INSERT INTO Document(DocumentTitle, DocumnetAuthor, DocumentExtension, DocumentText, DocumentDate) "
+                    + "VALUES( ?, ?, ?, ?, ? );");
+            ps.setString(1, document.getTitle());
+            ps.setString(2, document.getAuthor());
+            ps.setString(3, document.getExtension());
+            ps.setString(4, document.getText());
+            ps.setString(5, document.getDate());
+            
+            ps.executeUpdate();
+            connection.close();
+        }
+        catch (SQLException ignore) {
+//            System.out.println("Connection hasn't created");
+            ignore.printStackTrace();
+        }
+        finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            }
+            catch (SQLException ignore) {
+                System.out.println("Connection hasn't closed");
+                ignore.printStackTrace();
+            }
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            }
+            catch (SQLException ignore) {
+                System.out.println("PraparedStatemen hasn't completed");
+                ignore.printStackTrace();
+            }
         }
     }
 
