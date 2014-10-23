@@ -10,7 +10,7 @@ public class DAO {
     public DAO() {
     }
 
-    public void addDataToDocument(List<Document> documents) {
+    public void addDataToTDocument(List<Document> documents) {
 
         PreparedStatement ps = null;
         Connection connection = null;
@@ -61,7 +61,7 @@ public class DAO {
         }
     }
 
-    public void addDataToTerm(List<Term> terms) {
+    public void addDataToTTerm(List<Term> terms) {
 
         PreparedStatement ps = null;
         Connection connection = null;
