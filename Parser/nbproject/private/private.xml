@@ -5,11 +5,13 @@
         <group>
             <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/test/parser/PerformanceTests/DocPerformanceTest.java</file>
             <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/test/parser/DocXParserTest.java</file>
+            <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/src/parser/Parser.java</file>
             <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/test/parser/PerformanceTests/DocXPerformanceTest.java</file>
             <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/test/parser/ParserManagerTest.java</file>
             <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/test/parser/DocParserTest.java</file>
             <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/test/parser/PerformanceTests/PdfPerformanceTest.java</file>
             <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/test/parser/PdfParserTest.java</file>
+            <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/src/parser/ParserManager.java</file>
             <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/test/parser/HtmlParserTest.java</file>
             <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/test/parser/PerformanceTests/HtmlPerformanceTest.java</file>
         </group>

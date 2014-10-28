@@ -75,7 +75,7 @@ public class ParserManager {
             System.out.println(stem + "\r");
         }
         
-        HashMap<String, Integer> invertedIdx = new HashMap<String, Integer>();
+        HashMap<String, Integer> invertedIdx = new HashMap<>();
         for (String word: stemOfDocWords){
             if(invertedIdx.containsKey(word)){
                 int value = invertedIdx.get(word);
