@@ -35,7 +35,7 @@ public class MSSQLConnection {
         }
     }
 
-    private void createMSSQLConnection() { //Step 2: Establish Java MSSQLServer connection
+    private Connection createMSSQLConnection() { //Step 2: Establish Java MSSQLServer connection
 
         try {
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -45,6 +45,7 @@ public class MSSQLConnection {
             ignore.printStackTrace();
             System.out.println("Error: Unable to Connect to Database.");
         }
+        return connection;
     }
 
     public void closeMSSQLConnection() {
@@ -57,7 +58,7 @@ public class MSSQLConnection {
     }
 
     public Connection getMSSQLConnection() {
-        return connection;
+        return createMSSQLConnection();
     }
 
 }

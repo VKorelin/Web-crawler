@@ -21,7 +21,7 @@ public class DAO {
             connection.setAutoCommit(false);
 
             for (int i = 0; i < documents.size(); i++) {
-                ps = connection.prepareStatement("INSERT INTO Document(DocumentTitle, DocumnetAuthor, DocumentExtension, DocumentText, DocumentDate) "
+                ps = connection.prepareStatement("INSERT INTO Document(DocumentTitle, DocumentAuthor, DocumentExtension, DocumentText, DocumentDate) "
                         + "VALUES( ?, ?, ?, ?, ? );");
                 ps.setString(1, documents.get(i).getTitle());
                 ps.setString(2, documents.get(i).getAuthor());
@@ -34,9 +34,10 @@ public class DAO {
 
             connection.commit();
             connection.close();
+                       
+            System.out.println("Successful: Operation the 'addDataToTDocument' has completed.");
         }
         catch (SQLException ignore) {
-//            System.out.println("Connection hasn't created");
             ignore.printStackTrace();
         }
         finally {
@@ -82,9 +83,10 @@ public class DAO {
 
             connection.commit();
             connection.close();
+            
+            System.out.println("Successful: Operation the 'addDataToTTerm' has completed.");
         }
         catch (SQLException ignore) {
-//            System.out.println("Connection hasn't created");
             ignore.printStackTrace();
         }
         finally {
@@ -121,12 +123,13 @@ public class DAO {
             ps = connection.prepareStatement("INSERT INTO Term(TermStem, TermDF) VALUES( ?, ? );");
             ps.setString(1, term.getStem());
             ps.setInt(2, term.getDf());
-            
+
             ps.executeUpdate();
             connection.close();
+
+            System.out.println("Successful: Operation the 'addTermToTTerm' has completed.");
         }
         catch (SQLException ignore) {
-//            System.out.println("Connection hasn't created");
             ignore.printStackTrace();
         }
         finally {
@@ -159,20 +162,22 @@ public class DAO {
         try {
 
             connection = new MSSQLConnection().getMSSQLConnection();
-            
-            ps = connection.prepareStatement("INSERT INTO Document(DocumentTitle, DocumnetAuthor, DocumentExtension, DocumentText, DocumentDate) "
+
+            ps = connection.prepareStatement("INSERT INTO Document(DocumentTitle, DocumentAuthor, DocumentExtension, DocumentText, DocumentDate) "
                     + "VALUES( ?, ?, ?, ?, ? );");
             ps.setString(1, document.getTitle());
             ps.setString(2, document.getAuthor());
             ps.setString(3, document.getExtension());
             ps.setString(4, document.getText());
             ps.setString(5, document.getDate());
-            
+
             ps.executeUpdate();
             connection.close();
+
+            System.out.println("Successful: Operation the 'addDocumentToTDocument' has completed.");
+
         }
         catch (SQLException ignore) {
-//            System.out.println("Connection hasn't created");
             ignore.printStackTrace();
         }
         finally {
