@@ -7,6 +7,7 @@ import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import me.champeau.ld.UberLanguageDetector;
 import parser.stemmers.EnglishStemmer;
 import parser.stemmers.RussianStemmer;
 import parser.stemmers.StemmerManager;
@@ -89,8 +90,9 @@ public class ParserManager {
         return new Document(text, invertedIdx, extension);
     }
 
-    private static String defineLang(String text) {
-        return "en";
+    public static String defineLang(String text) {
+        UberLanguageDetector detector = UberLanguageDetector.getInstance();
+	return detector.detectLang(text);
     }
 
     public ArrayList<Document> MultipleParse(String folderName) /*throws IOException */{
