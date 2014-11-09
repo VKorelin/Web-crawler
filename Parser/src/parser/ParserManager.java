@@ -33,6 +33,7 @@ public class ParserManager {
         ArrayList<String> links = null;
         if (isWebAddress(filename)) {
             text = HtmlParser.parse(filename, links);
+            extension = filename;
         } else {
             file = new File(filename);
 

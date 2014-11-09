@@ -12,7 +12,8 @@ public class Document {
     private String extension;
     private String text;
     private String date;
-    ArrayList<String> links;
+    private ArrayList<String> links;
+    private String urlAddress;
 
     public Document() {
 
@@ -31,6 +32,10 @@ public class Document {
         this.invertedIdx = invertedIdx;
         this.extension = ext;
         this.links = links;
+        if(links != null){
+            urlAddress = ext;
+            this.extension = "html";
+        }
     }
 
     public Document(Document document) {
