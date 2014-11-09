@@ -1,6 +1,7 @@
 package parser;
 
 import DAO.Document;
+import java.net.MalformedURLException;
 import junit.framework.TestCase;
 
 public class ParserManagerTest extends TestCase {
@@ -9,7 +10,7 @@ public class ParserManagerTest extends TestCase {
         super(testName);
     }
 
-    public void testNullFileNameParse() {
+    public void testNullFileNameParse() throws MalformedURLException {
         String filename = null;
         ParserManager instance = new ParserManager();
         Document result = instance.Parse(filename);
@@ -17,7 +18,7 @@ public class ParserManagerTest extends TestCase {
         assertEquals(expResult, result);
     }
     
-    public void testEmptyStringNameParse() {
+    public void testEmptyStringNameParse() throws MalformedURLException {
         String filename = "";
         ParserManager instance = new ParserManager();
         Document result = instance.Parse(filename);
@@ -25,7 +26,7 @@ public class ParserManagerTest extends TestCase {
         assertEquals(expResult, result);
     }
     
-    public void testInvalidNameParse() {
+    public void testInvalidNameParse() throws MalformedURLException {
         String filename = "rgfdopsfdpokpodkopk";
         ParserManager instance = new ParserManager();
         Document result = instance.Parse(filename);
@@ -33,7 +34,7 @@ public class ParserManagerTest extends TestCase {
         assertEquals(expResult, result);
     }
     
-    public void testNotSupportedFormatNameParse() {
+    public void testNotSupportedFormatNameParse() throws MalformedURLException {
         String filename = "rgfdopsfdpokpodkopk.eqa";
         ParserManager instance = new ParserManager();
         Document result = instance.Parse(filename);

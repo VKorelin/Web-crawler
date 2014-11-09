@@ -2,12 +2,18 @@ package parser;
 
 import DAO.Document;
 import java.io.*;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import me.champeau.ld.UberLanguageDetector;
 import parser.stemmers.EnglishStemmer;
 import parser.stemmers.RussianStemmer;
 import parser.stemmers.StemmerManager;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.jsoup.Jsoup;
+import org.jsoup.select.Elements;
 
 public class ParserManager {
 
@@ -17,38 +23,45 @@ public class ParserManager {
     public ParserManager() {
     }
 
-    public Document Parse(String filename) {
+    public Document Parse(String filename) throws MalformedURLException{
         if (filename == null) {
             return null;
         }
-        file = new File(filename);
-
-        int extPos = file.getName().lastIndexOf('.');
-        if (extPos == -1) {
-            return null;
-        }
-
+        
         String text = "";
-        String extension = file.getName().substring(extPos);
+        String extension = "";
+        ArrayList<String> links = null;
+        if (isWebAddress(filename)) {
+            text = HtmlParser.parse(filename, links);
+        } else {
+            file = new File(filename);
 
-        switch (extension) {
-            case ".docx":
-                text = DocXParser.parse(file);
-                break;
-            case ".doc":
-                text = DocParser.parse(file);
-                break;
-            case ".pdf":
-                text = PdfParser.parse(file);
-                break;
-            case ".htm":
-            case ".html":
-                text = HtmlParser.parse(file);
-                break;
-            default:
+            int extPos = file.getName().lastIndexOf('.');
+            if (extPos == -1) {
                 return null;
-        }
+            }
 
+            extension = file.getName().substring(extPos);
+
+            switch (extension) {
+                case ".docx":
+                    text = DocXParser.parse(file);
+                    break;
+                case ".doc":
+                    text = DocParser.parse(file);
+                    break;
+                case ".pdf":
+                    text = PdfParser.parse(file);
+                    break;
+                case ".htm":
+                case ".html":
+                    text = HtmlParser.parse(file, links);
+                    break;
+                default:
+                    return null;
+            }
+        }
+        
         ArrayList<String> stemOfDocWords = new ArrayList<>();
 
         StemmerManager sManager = null;
@@ -84,7 +97,7 @@ public class ParserManager {
             }
         }
 
-        return new Document(text, invertedIdx, extension);
+        return new Document(text, invertedIdx, extension, links);
     }
 
     public static String defineLang(String text) {
@@ -92,7 +105,7 @@ public class ParserManager {
 	return detector.detectLang(text);
     }
 
-    public ArrayList<Document> MultipleParse(String folderName) /*throws IOException */{
+    public ArrayList<Document> MultipleParse(String folderName) throws IOException /*throws IOException */{
         ArrayList<File> files = new ArrayList<>();
         ArrayList<Document> docs = new ArrayList<Document>();
         FindDocs(files, folderName);
@@ -114,5 +127,9 @@ public class ParserManager {
                 files.add(f);
             }
         }
+    }
+
+    private boolean isWebAddress(String filename) {
+        return true;
     }
 }

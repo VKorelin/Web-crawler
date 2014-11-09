@@ -1,6 +1,8 @@
 package DAO;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Document {
 
@@ -10,6 +12,7 @@ public class Document {
     private String extension;
     private String text;
     private String date;
+    ArrayList<String> links;
 
     public Document() {
 
@@ -23,10 +26,11 @@ public class Document {
         this.date = date;
     }
 
-    public Document(String text, HashMap<String, Integer> invertedIdx, String ext) {
+    public Document(String text, HashMap<String, Integer> invertedIdx, String ext, ArrayList<String> links) {
         this.text = text;
         this.invertedIdx = invertedIdx;
         this.extension = ext;
+        this.links = links;
     }
 
     public Document(Document document) {

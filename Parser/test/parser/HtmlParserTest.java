@@ -23,13 +23,14 @@ public class HtmlParserTest extends TestCase {
         String filename = ".\\resources\\TestRes\\html\\Hello.html";
         File file = new File(filename);
         String expResult = "      Hello!         How�are you?";
-        String result = HtmlParser.parse(file);
+        String result = HtmlParser.parse(file, null);
         assertEquals(expResult, result);
     }
 
     public void testNullFileParse() {
         String expResult = null;
-        String result = HtmlParser.parse(null);
+        String s = null;
+        String result = HtmlParser.parse(s, null);
         assertEquals(expResult, result);
     }
 
@@ -37,7 +38,7 @@ public class HtmlParserTest extends TestCase {
         String filename = ".\\resources\\TestRes\\html\\Empty.html";
         File file = new File(filename);
         String expResult = "    ";
-        String result = HtmlParser.parse(file);
+        String result = HtmlParser.parse(file, null);
         assertEquals(expResult, result);
     }
     
@@ -45,7 +46,7 @@ public class HtmlParserTest extends TestCase {
         String filename = ".\\resources\\TestRes\\html\\HelloImg.html";
         File file = new File(filename);
         String expResult = "      Hello!                 How are you? ";
-        String result = HtmlParser.parse(file);
+        String result = HtmlParser.parse(file, null);
         assertEquals(expResult, result);
     }
 }
