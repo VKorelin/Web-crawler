@@ -8,6 +8,8 @@ package dao;
 import DAO.DAO;
 import DAO.Document;
 import DAO.Term;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -46,7 +48,7 @@ public class DAOTest {
      * Test of addDataToTDocument method, of class DAO.
      */
     @Test
-    public void testAddDataToTDocument() {
+    public void testAddDataToTDocument() throws IOException {
         System.out.println("addDataToTDocument");
         ParserManager pm = new ParserManager();
         List<Document> documents = null;
@@ -72,7 +74,7 @@ public class DAOTest {
      * Test of addTermToTTerm method, of class DAO.
      */
     @Test
-    public void testAddTermToTTerm() {
+    public void testAddTermToTTerm() throws MalformedURLException {
         System.out.println("addTermToTTerm");
         ParserManager pm = new ParserManager();
         DAO instance = new DAO();
@@ -85,7 +87,7 @@ public class DAOTest {
      * Test of addDocumentToTDocument method, of class DAO.
      */
     @Test
-    public void testAddDocumentToTDocument() {
+    public void testAddDocumentToTDocument() throws MalformedURLException {
         System.out.println("addDocumentToTDocument");
         ParserManager pm = new ParserManager();
         DAO instance = new DAO();
