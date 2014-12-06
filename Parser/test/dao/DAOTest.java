@@ -75,17 +75,17 @@ public class DAOTest {
      */
     @Test
     public void testAddTermToTTerm() throws MalformedURLException {
-        /*System.out.println("addTermToTTerm");
+        System.out.println("addTermToTTerm");
         ParserManager pm = new ParserManager();
         DAO instance = new DAO();
         Term term = new Term("comi", 3);
         Document document = pm.Parse(".\\resources\\pdf\\Hello.pdf");
-        instance.addTermToTTerm(term);*/
+        instance.addTermToTTerm(term);
     }
 
     /**
      * Test of addDocumentToTDocument method, of class DAO.
-     *//*
+     */
     @Test
     public void testAddDocumentToTDocument() throws MalformedURLException {
         System.out.println("addDocumentToTDocument");
@@ -93,6 +93,6 @@ public class DAOTest {
         DAO instance = new DAO();
         Document document = pm.Parse(".\\resources\\pdf\\Hello.pdf");
         instance.addDocumentToTDocument(document);
-    }*/
+    }
 
 }

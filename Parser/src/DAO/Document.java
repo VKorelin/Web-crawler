@@ -3,8 +3,6 @@ package DAO;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import parser.HtmlParser;
-import parser.IParser;
 
 public class Document {
 
@@ -14,17 +12,12 @@ public class Document {
     private String extension;
     private String text;
     private String date;
-    public ArrayList<String> links;
+    private ArrayList<String> links;
     private String urlAddress;
-    public boolean isFailedToDownload;
-    public int numberOfLinksExtractionErrors = 0;
-    public int numberOfJSLinks = 0;
 
     public Document() {
 
     }
-    
-    
 
     public Document(String title, String author, String extension, String text, String date) {
         this.title = title;
@@ -34,21 +27,16 @@ public class Document {
         this.date = date;
     }
 
-    public Document(String text, HashMap<String, Integer> invertedIdx, String ext, HtmlParser parser) {
+    public Document(String text, HashMap<String, Integer> invertedIdx, String ext, ArrayList<String> links) {
         this.text = text;
         this.invertedIdx = invertedIdx;
         this.extension = ext;
-        this.links = parser.linksList;
+        this.links = links;
         if(links != null){
             urlAddress = ext;
             this.extension = "html";
         }
-        this.numberOfJSLinks = parser.javaScriptLinks;
-        this.numberOfLinksExtractionErrors = parser.numberOfLinksExtractionErrors;
-        this.isFailedToDownload = parser.isFailedToDownload;
     }
-    
-    
 
     public Document(Document document) {
         this.title = document.title;
