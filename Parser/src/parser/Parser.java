@@ -1,6 +1,5 @@
 package parser;
 
-import Crawler.CrawlerInstance;
 import DAO.DAO;
 import DAO.Document;
 import DAO.MSSQLConnection;
@@ -11,8 +10,16 @@ import java.util.logging.Logger;
 
 public class Parser {
 
-    public static void main(String[] args) throws IOException {
-        Crawler.CrawlerInstance crawler = new CrawlerInstance("http://www.apmath.spbu.ru", "apmath.spbu.ru");
-        crawler.Start(false);
+    public static void main(String[] args) {
+        //DAO dao = new DAO();
+        ParserManager pm = new ParserManager();
+        try {
+            Document doc = pm.Parse("http://www.yandex.ru");
+            //dao.addDocumentToTDocument(doc);
+        } catch (IOException ex) {
+            Logger.getLogger(Parser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
     }
 }

@@ -9,7 +9,7 @@ public class ParserManagerTest extends TestCase {
     public ParserManagerTest(String testName) {
         super(testName);
     }
-/*
+
     public void testNullFileNameParse() throws MalformedURLException {
         String filename = null;
         ParserManager instance = new ParserManager();
@@ -41,5 +41,5 @@ public class ParserManagerTest extends TestCase {
         Document expResult = null;
         assertEquals(expResult, result);
     }
-    */
+    
 }
