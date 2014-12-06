@@ -2,6 +2,7 @@ package parser;
 
 import DAO.Document;
 import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,16 +24,21 @@ public class ParserManager {
     public ParserManager() {
     }
 
-    public Document Parse(String filename) throws MalformedURLException{
+    public Document Parse(String filename, boolean parseText) throws MalformedURLException, IOException {
         if (filename == null) {
             return null;
         }
-        
+
         String text = "";
         String extension = "";
-        ArrayList<String> links = null;
+
+        HashMap<String, Integer> invertedIdx = new HashMap<>();
+
+        HtmlParser htmlParser = null;
+
         if (isWebAddress(filename)) {
-            text = HtmlParser.parse(filename, links);
+            htmlParser = new HtmlParser(filename, parseText);
+            htmlParser.parse();
             extension = filename;
         } else {
             file = new File(filename);
@@ -56,63 +62,60 @@ public class ParserManager {
                     break;
                 case ".htm":
                 case ".html":
-                    text = HtmlParser.parse(file, links);
+                    htmlParser = new HtmlParser(filename, parseText);
+                    htmlParser.parse(file);
                     break;
                 default:
                     return null;
             }
         }
-        
-        ArrayList<String> stemOfDocWords = new ArrayList<>();
 
-        StemmerManager sManager = null;
+        if (parseText) {
+            ArrayList<String> stemOfDocWords = new ArrayList<>();
 
-        switch (defineLang(text)) {
-            case "ru":
-                sManager = new StemmerManager(new RussianStemmer());
-                break;
-            case "en":
-                sManager = new StemmerManager(new EnglishStemmer());
-                break;
-            default:
-                return null;
-        }
+            StemmerManager sManager = null;
 
-        String[] strValues = text.split("(?!['])[\\p{Punct}\\d\\s|\\r]+");
-        for (String word : strValues) {
-            stemOfDocWords.add(sManager.getStem(word));
-        }
-
-        for (String stem : stemOfDocWords) {
-            System.out.println(stem + "\r");
-        }
-        
-        HashMap<String, Integer> invertedIdx = new HashMap<>();
-        for (String word: stemOfDocWords){
-            if(invertedIdx.containsKey(word)){
-                int value = invertedIdx.get(word);
-                invertedIdx.put(word, value++);
+            switch (defineLang(text)) {
+                case "ru":
+                    sManager = new StemmerManager(new RussianStemmer());
+                    break;
+                case "en":
+                    sManager = new StemmerManager(new EnglishStemmer());
+                    break;
+                default:
+                    return null;
             }
-            else{
-                invertedIdx.put(word, 1);
+
+            String[] strValues = text.split("(?!['])[\\p{Punct}\\d\\s|\\r]+");
+            for (String word : strValues) {
+                stemOfDocWords.add(sManager.getStem(word));
+            }
+
+            for (String word : stemOfDocWords) {
+                if (invertedIdx.containsKey(word)) {
+                    int value = invertedIdx.get(word);
+                    invertedIdx.put(word, value++);
+                } else {
+                    invertedIdx.put(word, 1);
+                }
             }
         }
-
-        return new Document(text, invertedIdx, extension, links);
+        return new Document(text, invertedIdx, extension, htmlParser);
     }
 
     public static String defineLang(String text) {
-        UberLanguageDetector detector = UberLanguageDetector.getInstance();
-	return detector.detectLang(text);
+        /*UberLanguageDetector detector = UberLanguageDetector.getInstance();
+         return detector.detectLang(text);*/
+        return "en";
     }
 
-    public ArrayList<Document> MultipleParse(String folderName) throws IOException /*throws IOException */{
+    public ArrayList<Document> MultipleParse(String folderName) throws IOException {
         ArrayList<File> files = new ArrayList<>();
         ArrayList<Document> docs = new ArrayList<Document>();
         FindDocs(files, folderName);
 
         for (File f : files) {
-            docs.add(Parse(f.getAbsolutePath()));
+            docs.add(Parse(f.getAbsolutePath(), true));
         }
         return docs;
     }
@@ -130,7 +133,16 @@ public class ParserManager {
         }
     }
 
-    private boolean isWebAddress(String filename) {
+    boolean isWebAddress(String url) throws MalformedURLException, IOException {
+        /*URL url1 = new URL("http://www.example.com");
+         HttpURLConnection huc = (HttpURLConnection) url1.openConnection();
+         int responseCode = huc.getResponseCode();
+
+         if (responseCode != 404) {
+         return true;
+         } else {
+         return false;
+         }*/
         return true;
     }
 }
