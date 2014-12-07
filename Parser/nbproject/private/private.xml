@@ -3,11 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/src/parser/Parser.java</file>
-            <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/src/parser/ParserManager.java</file>
-            <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/src/parser/HtmlParser.java</file>
-            <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/src/DAO/Document.java</file>
-            <file>file:/C:/Users/Vasily/Documents/GitHub/Web-crawler/Parser/src/Crawler/CrawlerInstance.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Web-crawler/Parser/src/parser/ParserManager.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Web-crawler/Parser/src/parser/Parser.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Web-crawler/Parser/test/parser/PerformanceTests/DocPerformanceTest.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Web-crawler/Parser/src/DAO/DataAccessLayer.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Web-crawler/Parser/test/parser/PerformanceTests/DocXPerformanceTest.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Web-crawler/Parser/test/dao/DataAccessLayerTest.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Web-crawler/Parser/src/DAO/Term.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Web-crawler/Parser/test/parser/DocParserTest.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Web-crawler/Parser/src/DAO/MSSQLConnection.java</file>
+            <file>file:/C:/Users/User/Documents/GitHub/Web-crawler/Parser/src/DAO/Document.java</file>
         </group>
     </open-files>
 </project-private>

@@ -5,12 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
-public class DAO {
+public class DataAccessLayer {
 
-    public DAO() {
+    public DataAccessLayer() {
     }
 
-    public void addDataToTDocument(List<Document> documents) {
+    public void addDocumentsToDB(List<Document> documents) {
 
         PreparedStatement ps = null;
         Connection connection = null;
@@ -19,7 +19,7 @@ public class DAO {
 
             connection = new MSSQLConnection().getMSSQLConnection();
             connection.setAutoCommit(false);
-
+            //Add fields Url, timedouwnloding pages 
             for (int i = 0; i < documents.size(); i++) {
                 ps = connection.prepareStatement("INSERT INTO Document(DocumentTitle, DocumentAuthor, DocumentExtension, DocumentText, DocumentDate) "
                         + "VALUES( ?, ?, ?, ?, ? );");
@@ -29,9 +29,10 @@ public class DAO {
                 ps.setString(4, documents.get(i).getText());
                 ps.setString(5, documents.get(i).getDate());
                 ps.addBatch();
-                int[] updateCounts = ps.executeBatch();
+   //             int[] updateCounts = ps.executeBatch();
             }
-
+               int[] updateCounts = ps.executeBatch();
+ 
             connection.commit();
             connection.close();
                        
@@ -62,7 +63,7 @@ public class DAO {
         }
     }
 
-    public void addDataToTTerm(List<Term> terms) {
+    public void addTermsToDB(List<Term> terms) {
 
         PreparedStatement ps = null;
         Connection connection = null;
@@ -111,7 +112,7 @@ public class DAO {
         }
     }
 
-    public void addTermToTTerm(Term term) {
+    public void addCurrentTermToDB(Term term) {
 
         PreparedStatement ps = null;
         Connection connection = null;
@@ -154,7 +155,7 @@ public class DAO {
         }
     }
 
-    public void addDocumentToTDocument(Document document) {
+    public void addCurrentDocumentToDB(Document document) {
 
         PreparedStatement ps = null;
         Connection connection = null;
